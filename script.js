@@ -118,16 +118,27 @@
 
             $scope.submitPayee = function(){
                 if ($location.path() == '/payee/new') {
-                    alert('fdp-test');
-                    // var payee = {
-                    //     payeeId: $scope.newPayeeId,
-                    //     name: $scope.newPayeeName,
-                    //     nameOfBank: $scope.newNameOfBank,
-                    //     cardNumber: $scope.newIBAN
-                    // };
-                    // $rootScope.payees.push(payee);
-                    // //localStorage.setItem('payees', $rootScope.payees);
-                    // $location.path('/payees');
+                    if (($scope.newPayeeName == '') || ($scope.newPayeeName == 'undefined')) {
+                        alert("Payee's name field can not be empty");
+                    }
+                    else if (($scope.newNameOfBank == '') || ($scope.newNameOfBank == 'undefined')) {
+                        alert("Bank name field can not be empty");
+                    }
+                    else if (($scope.newIBAN == '') || ($scope.newIBAN == 'undefined')) {
+                        alert("IBAN number field can not be empty");
+                    }
+                    else {
+                        var payee = {
+                            payeeId: $scope.newPayeeId,
+                            name: $scope.newPayeeName,
+                            nameOfBank: $scope.newNameOfBank,
+                            cardNumber: $scope.newIBAN
+                        };
+                        $rootScope.payees.push(payee);
+                        // //localStorage.setItem('payees', $rootScope.payees);
+                        $location.path('/payees'); 
+                    }
+                    
                 } else {
                     for(var i=0; i<($scope.payees).length; i++)
                         if($scope.payees[i].payeeId == $routeParams.id) {
