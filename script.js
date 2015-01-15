@@ -142,9 +142,19 @@
                 } else {
                     for(var i=0; i<($scope.payees).length; i++)
                         if($scope.payees[i].payeeId == $routeParams.id) {
-                            $scope.payees[i].name = $scope.newPayeeName;
-                            $scope.payees[i].nameOfBank = $scope.newNameOfBank;
-                            $scope.payees[i].cardNumber = $scope.newIBAN;
+                            if (($scope.newPayeeName == '') || ($scope.newPayeeName == 'undefined')) {
+                                alert("Payee's name field can not be empty");
+                            }
+                            else if (($scope.newNameOfBank == '') || ($scope.newNameOfBank == 'undefined')) {
+                                alert("Bank name field can not be empty");
+                            }
+                            else if (($scope.newIBAN == '') || ($scope.newIBAN == 'undefined')) {
+                                alert("IBAN number field can not be empty");
+                            } else {
+                                $scope.payees[i].name = $scope.newPayeeName;
+                                $scope.payees[i].nameOfBank = $scope.newNameOfBank;
+                                $scope.payees[i].cardNumber = $scope.newIBAN;
+                            };
                         };
                     $location.path('/payees');
                 };
