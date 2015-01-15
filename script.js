@@ -154,9 +154,10 @@
                                 $scope.payees[i].name = $scope.newPayeeName;
                                 $scope.payees[i].nameOfBank = $scope.newNameOfBank;
                                 $scope.payees[i].cardNumber = $scope.newIBAN;
+                                $location.path('/payees');
                             };
                         };
-                    $location.path('/payees');
+                    
                 };
 
             };
