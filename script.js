@@ -118,7 +118,7 @@
 
             $scope.submitPayee = function(){
                 if ($location.path() == '/payee/new') {
-                    alert(fdp-test);
+                    alert('fdp-test');
                     // var payee = {
                     //     payeeId: $scope.newPayeeId,
                     //     name: $scope.newPayeeName,
