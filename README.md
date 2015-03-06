@@ -14,7 +14,6 @@ The front-end side of application is made on Angulal js. I have chosen it becaus
 I am not professional with Angular and therefore it took approx. 10 hours to create this application.
 I haven’t created many things such as right validation of input form (Validated only form of input sum amount in ‘Make payment’ section).
 Values of sum transferred to payees in the transaction list should be the links to pages of every single transaction details.
-I haven’t put date of transaction in transaction list and have not made sorting. I can make everything of these, just need more time.  
 
 In the project are being used links based on routes. It is not possible to get access to any section via direct link, because I am not using configured web-server. If the application would be based on configured web-server, therefore it would response index.html on any url request. 
 
